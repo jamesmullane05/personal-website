@@ -7,19 +7,18 @@ type NavigationLinkProps = {
 }
 export default function NavigationLink({name, link}: NavigationLinkProps) {
   return (
-    <li className='hover:font-black font-medium drop-shadow-md uppercase'>
+    <li className='hover:font-semibold font-medium drop-shadow-md uppercase'>
       <Link href={link} className=''> 
         {name} 
       </Link> 
     </li>
   )
 }
+
+
+
 /*
   <span className="pointer-events-none absolute left-0 -bottom-1 h-[2px] w-full origin-left scale-x-0 bg-black transition-transform duration-300 ease-out group-hover:scale-x-100" />
-*/
-
-
-/*
 import React from 'react'
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import DownloadCVButton from "./DownloadCVButton"

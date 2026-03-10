@@ -1,3 +1,4 @@
+import Graph from './components/Graph';
 import Hero from './components/Hero';
 export default function Home() {
   return (

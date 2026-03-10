@@ -3,6 +3,8 @@ import { LeetCodeUserProfile } from '@/src/types/LeetCodeApiResponse'
 import { safeFetch, SafeFetchResult } from '@/src/lib/safeFetch'
 import { LeetcodeProblem } from '@/src/services/repo';
 
+import LeetcodeCard from '../components/LeetcodeCard'
+
 export default async function LeetcodePage() {
   const problems: LeetcodeProblem[] | null = await loadProblems();
 
@@ -13,10 +15,7 @@ export default async function LeetcodePage() {
   return (
     <div>
       {problems.map(p => (
-          <div key={p.title}>
-            {p.lang}
-            {p.title}
-          </div>
+          <LeetcodeCard key={p.title} problemName={p.title} programmingLanguage={p.lang}/>
       ))}
     </div>
   );
