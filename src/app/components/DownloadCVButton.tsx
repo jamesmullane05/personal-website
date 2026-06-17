@@ -1,11 +1,15 @@
-import React from 'react'
+import { FaDownload } from "react-icons/fa";
+import { profile } from "@/src/data/site";
 
-function DownloadCVButton() {
+export default function DownloadCVButton() {
   return (
-    <button className="mt-8 rounded bg-white px-6 py-3 text-black border-black border-1 hover:bg-gray-50 ">
-        <a href="/cv.pdf" download="cv.pdf">Click Here to Download My CV</a>
-    </button>
-  )
+    <a
+      href={profile.resume}
+      download="James_Mullane_Resume.pdf"
+      className="inline-flex items-center justify-center gap-2 rounded-full bg-slate-950 px-6 py-3 text-sm font-bold text-white shadow-lg shadow-slate-950/10 transition hover:-translate-y-0.5 hover:bg-slate-800"
+    >
+      <FaDownload className="text-xs" />
+      Download CV
+    </a>
+  );
 }
-
-export default DownloadCVButton

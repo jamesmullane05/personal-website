@@ -1,43 +1,40 @@
-import React from 'react'
+import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
+import { profile } from "@/src/data/site";
 
-function Footer() {
+export default function Footer() {
   return (
-    <footer className="mt-16 border-t border-gray-200 bg-white">
-      <div className="mx-auto max-w-6xl px-6 py-6 flex flex-col items-center justify-between gap-4 text-sm text-gray-500 sm:flex-row">
-        
-        <p>
-          © {new Date().getFullYear()} James Mullane. All rights reserved.
-        </p>
+    <footer className="mt-20 border-t border-slate-200 bg-white/80">
+      <div className="mx-auto flex max-w-6xl flex-col gap-6 px-5 py-8 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+        <div>
+          <p className="font-semibold text-slate-800">James Mullane</p>
+          <p>© {new Date().getFullYear()} · Auckland, New Zealand</p>
+        </div>
 
-        <div className="flex gap-6">
+        <div className="flex flex-wrap items-center gap-4">
           <a
-            href="https://github.com/jamesmullane05"
+            href={profile.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-indigo-600 transition-colors"
+            className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 font-medium text-slate-700 transition hover:-translate-y-0.5 hover:border-slate-300 hover:text-slate-950 hover:shadow-sm"
           >
-            GitHub
+            <FaGithub /> GitHub
           </a>
-
           <a
-            href="https://leetcode.com/jamesmullane05"
+            href={profile.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-indigo-600 transition-colors"
+            className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 font-medium text-slate-700 transition hover:-translate-y-0.5 hover:border-slate-300 hover:text-slate-950 hover:shadow-sm"
           >
-            LeetCode
+            <FaLinkedin /> LinkedIn
           </a>
-
           <a
-            href="mailto:jamesmullane05@gmail.com"
-            className="hover:text-indigo-600 transition-colors"
+            href={`mailto:${profile.email}`}
+            className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 font-medium text-slate-700 transition hover:-translate-y-0.5 hover:border-slate-300 hover:text-slate-950 hover:shadow-sm"
           >
-            Contact
+            <FaEnvelope /> Email
           </a>
         </div>
       </div>
     </footer>
-  )
+  );
 }
-
-export default Footer

@@ -1,53 +1,42 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import NavigationBar from "./components/NavigationBar";
 import Footer from "./components/Footer";
-import { ThemeProvider } from "./context/themeContext"; 
-
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import { ThemeProvider } from "./context/themeContext";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://yourdomain.com"),
+  metadataBase: new URL("https://jamesmullane.com"),
   title: {
-    default: "James Mullane | Software Developer & Entrepreneur",
+    default: "James Mullane | Software Engineering Portfolio",
     template: "%s | James Mullane",
   },
-  description: "James Mullane is a Computer Science student at the University of Auckland and Co-Founder of Cosmoshop NZ. Passionate about web development, software engineering, and entrepreneurship.",
+  description:
+    "James Mullane is a Computer Science and Economics student at the University of Auckland building full-stack applications, automation tools, APIs, and e-commerce systems.",
   keywords: [
     "James Mullane",
     "University of Auckland",
-    "Cosmoshop NZ",
-    "Software Developer",
-    "Web Developer",
+    "Software Engineering Intern",
     "Computer Science Student",
     "Auckland Developer",
+    "Next.js Developer",
+    "Automation",
   ],
   authors: [{ name: "James Mullane" }],
   creator: "James Mullane",
   openGraph: {
-    title: "James Mullane | Software Developer & Entrepreneur",
+    title: "James Mullane | Software Engineering Portfolio",
     description:
-      "Computer Science student at the University of Auckland and Co-Founder of Cosmoshop NZ. Building modern web applications and scalable digital solutions.",
-    url: "https://yourdomain.com",
+      "Computer Science and Economics student at the University of Auckland building full-stack applications, automation tools, APIs, and e-commerce systems.",
+    url: "https://jamesmullane.com",
     siteName: "James Mullane Portfolio",
     locale: "en_NZ",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "James Mullane | Software Developer",
+    title: "James Mullane | Software Engineering Portfolio",
     description:
-      "Computer Science student at the University of Auckland and Co-Founder of Cosmoshop NZ.",
+      "Computer Science and Economics student at the University of Auckland building practical software products.",
   },
   robots: {
     index: true,
@@ -61,18 +50,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-white dark:bg-black`}
-      >
+    <html lang="en" suppressHydrationWarning>
+      <body className="min-h-screen text-slate-950 antialiased transition-colors duration-300 dark:text-slate-100">
         <ThemeProvider>
-          <NavigationBar/>
+          <NavigationBar />
           {children}
-          <Footer/>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
   );
 }
-
-

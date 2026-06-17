@@ -1,45 +1,28 @@
-import React from 'react'
-import ProjectCard from '../components/ProjectCard'
-import { safeFetch, SafeFetchResult } from '@/src/lib/safeFetch'
-import { Project } from '@/src/services/repo';
+import ProjectCard from "../components/ProjectCard";
+import { projects } from "@/src/data/site";
 
-export default async function Projects() {
-  const projects: Project[] | null = await loadProjects();
-  if (!projects) {
-    return <p>Failed to load Projects.</p>;
-  }
+export const metadata = {
+  title: "Projects",
+};
 
+export default function ProjectsPage() {
   return (
-    <div className='flex flex-col items-center py-16 '>
-      <h2 className="text-2xl font-semibold text-gray-900 mb-4">
-          Projects
-      </h2>
-      <div className="flex flex-wrap justify-center gap-6 py-8">
-        
-        {projects.map(p => (
-          <ProjectCard 
-            key={p.name}
-            title={p.name}
-            description={p.description}
-            link={p.link}
-          />
+    <main className="mx-auto max-w-6xl px-5 py-14 sm:px-6">
+      <section className="mb-10 rounded-[2rem] border border-slate-200 bg-white/85 p-8 shadow-sm sm:p-10">
+        <p className="text-sm font-bold uppercase tracking-[0.25em] text-sky-700">Projects</p>
+        <h1 className="mt-3 max-w-4xl text-4xl font-black tracking-tight text-slate-950 sm:text-5xl">
+          A curated set of software projects with practical impact.
+        </h1>
+        <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600">
+          These projects show the kind of work I want to do in a software engineering internship: building reliable tools, integrating APIs, automating workflows, and contributing to team-based web applications.
+        </p>
+      </section>
+
+      <section className="grid gap-6 lg:grid-cols-2">
+        {projects.map((project) => (
+          <ProjectCard key={project.title} {...project} />
         ))}
-      </div>
-    </div>
-  )
-}
-
-
-async function loadProjects(): Promise<Project[] | null>  {
-  const { data, error }: SafeFetchResult<Project[]> = await safeFetch<Project[]>(
-    "http://localhost:3000/api/github/projects",
-    { cache: "no-store" }
+      </section>
+    </main>
   );
-  if (error) {
-    return null;
-  }
-  return data;
 }
-
-
-

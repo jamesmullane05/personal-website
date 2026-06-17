@@ -1,14 +1,17 @@
-import React from "react";
-import Skills from "./Skills";
 import Experience from "./Experience";
-import Title from "./Introduction"
+import Introduction from "./Introduction";
+import Skills from "./Skills";
+
+export const metadata = {
+  title: "About",
+};
 
 export default function AboutPage() {
   return (
-    <main className="max-w-5xl mx-auto px-6 py-16">
-      <Title/>
-      <Experience/>
-      <Skills list = {["React", "Next.js", "JavaScript", "Tailwind CSS", "HTML", "Git"]}/>
+    <main className="mx-auto max-w-6xl space-y-14 px-5 py-14 sm:px-6">
+      <Introduction />
+      <Experience />
+      <Skills />
     </main>
   );
 }

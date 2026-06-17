@@ -1,32 +1,117 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f8fafc;
+  --foreground: #0f172a;
+}
+
+.dark {
+  --background: #020617;
+  --foreground: #e2e8f0;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: Arial, Helvetica, sans-serif;
+  --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
+  margin: 0;
+  background:
+    radial-gradient(circle at top left, rgba(14, 165, 233, 0.16), transparent 28rem),
+    radial-gradient(circle at top right, rgba(16, 185, 129, 0.12), transparent 24rem),
+    var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
-/*
-* {
-  outline: 1px solid black;
-  margin: 0;
 
-}*/
+.dark body {
+  background:
+    radial-gradient(circle at top left, rgba(56, 189, 248, 0.14), transparent 30rem),
+    radial-gradient(circle at top right, rgba(16, 185, 129, 0.1), transparent 26rem),
+    var(--background);
+}
+
+a {
+  text-decoration: none;
+}
+
+::selection {
+  background: #0f172a;
+  color: #ffffff;
+}
+
+.dark ::selection {
+  background: #e2e8f0;
+  color: #020617;
+}
+
+/* Theme overrides for existing Tailwind utility classes. Keeping them here makes the
+   light/dark switch work across the whole portfolio without cluttering every component. */
+.dark .bg-white,
+.dark .bg-white\/70,
+.dark .bg-white\/80,
+.dark .bg-white\/85 {
+  background-color: rgba(15, 23, 42, 0.82);
+}
+
+.dark .bg-slate-50,
+.dark .bg-slate-100 {
+  background-color: #1e293b;
+}
+
+.dark .border-white,
+.dark .border-white\/70,
+.dark .border-slate-100,
+.dark .border-slate-200,
+.dark .border-slate-300 {
+  border-color: rgba(51, 65, 85, 0.95);
+}
+
+.dark .text-slate-950,
+.dark .text-slate-900,
+.dark .text-slate-800,
+.dark .text-slate-700 {
+  color: #f8fafc;
+}
+
+.dark .text-slate-600 {
+  color: #cbd5e1;
+}
+
+.dark .text-slate-500 {
+  color: #94a3b8;
+}
+
+.dark .text-sky-700,
+.dark .text-sky-800 {
+  color: #7dd3fc;
+}
+
+.dark .text-emerald-600 {
+  color: #6ee7b7;
+}
+
+.dark .shadow-slate-300\/40,
+.dark .shadow-slate-300\/60,
+.dark .shadow-slate-200\/70 {
+  --tw-shadow-color: rgba(2, 6, 23, 0.55);
+}
+
+.dark .from-sky-100\/80 {
+  --tw-gradient-from: rgba(12, 74, 110, 0.55) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgba(12, 74, 110, 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}

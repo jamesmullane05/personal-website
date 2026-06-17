@@ -1,19 +1,18 @@
-import React from 'react'
+import { profile } from "@/src/data/site";
 
 export default function Introduction() {
   return (
-    <section className="mb-12">
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">About Me</h1>
-        <p className="text-lg text-gray-600">
-          Hi, I’m James Mullane, a university student interested in software 
-          development and building practical applications. I enjoy working on
-           projects that involve web development, backend systems, and problem
-            solving. Recently I have been focusing on modern web technologies 
-            such as Next.js and TypeScript while continuing to strengthen my 
-            understanding of system design. I am always looking for opportunities 
-            to gain experience, improve my skills, and contribute to meaningful 
-            projects.
-        </p>
+    <section className="rounded-[2rem] border border-slate-200 bg-white/85 p-8 shadow-sm sm:p-10">
+      <p className="text-sm font-bold uppercase tracking-[0.25em] text-sky-700">About me</p>
+      <h1 className="mt-3 max-w-4xl text-4xl font-black tracking-tight text-slate-950 sm:text-5xl">
+        Computer Science & Economics student focused on building useful, reliable software.
+      </h1>
+      <p className="mt-6 max-w-4xl text-lg leading-8 text-slate-600">
+        {profile.summary}
+      </p>
+      <p className="mt-4 max-w-4xl text-lg leading-8 text-slate-600">
+        I’m especially interested in software engineering internships where I can work on backend systems, full-stack applications, automation, data pipelines, and products with real operational impact.
+      </p>
     </section>
-  )
+  );
 }
