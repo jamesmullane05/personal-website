@@ -1,0 +1,19 @@
+<svg width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="moonBody" x1="23" y1="14" x2="77" y2="82" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E0F2FE"/>
+      <stop offset="0.45" stop-color="#93C5FD"/>
+      <stop offset="1" stop-color="#6366F1"/>
+    </linearGradient>
+    <filter id="moonGlow" x="-18" y="-18" width="132" height="132" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 1 0 0.35 0 1 0 0 0.61 0 0 1 0 1 0 0 0 0.42 0" result="glow"/>
+      <feBlend in="SourceGraphic" in2="glow" mode="normal"/>
+    </filter>
+  </defs>
+  <g filter="url(#moonGlow)">
+    <path d="M66.7 76.8C47.3 82.3 27 71.1 21.5 51.7C16 32.3 27.2 12 46.6 6.5C42.5 15.1 41.7 25.3 44.6 35.2C49 50.7 61.3 61.4 75.7 64.2C73.3 69.7 70.2 73.9 66.7 76.8Z" fill="url(#moonBody)"/>
+    <path d="M64.6 22.5L67.7 29L74.8 30L69.7 35L70.9 42L64.6 38.7L58.2 42L59.4 35L54.3 30L61.4 29L64.6 22.5Z" fill="#F8FAFC"/>
+    <path d="M76.5 48L78.2 51.5L82 52.1L79.3 54.8L79.9 58.6L76.5 56.8L73.1 58.6L73.8 54.8L71 52.1L74.8 51.5L76.5 48Z" fill="#DBEAFE"/>
+  </g>
+</svg>

@@ -1,6 +1,6 @@
 "use client";
 
-import { FaMoon, FaSun } from "react-icons/fa6";
+import Image from "next/image";
 import { useTheme } from "../context/themeContext";
 
 export default function ThemeToggle() {
@@ -12,10 +12,16 @@ export default function ThemeToggle() {
       type="button"
       onClick={toggleTheme}
       aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
-      className="inline-flex items-center gap-2 whitespace-nowrap rounded-full border border-slate-200 bg-white px-3 py-2 text-sm font-bold text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:border-slate-300 hover:text-slate-950 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:border-slate-500 dark:hover:text-white sm:px-4"
+      aria-pressed={isDark}
+      className={`theme-toggle ${isDark ? "is-dark" : "is-light"}`}
+      data-cursor="hover"
     >
-      {isDark ? <FaSun className="text-amber-300" /> : <FaMoon className="text-slate-700" />}
-      <span className="hidden sm:inline">{isDark ? "Light" : "Dark"}</span>
+      <span className="theme-toggle-track" aria-hidden="true">
+        <span className="theme-toggle-stars" />
+        <Image className="theme-toggle-image theme-toggle-sun" src="/icons/theme-sun.svg" alt="" width={96} height={96} draggable={false} priority />
+        <Image className="theme-toggle-image theme-toggle-moon" src="/icons/theme-moon.svg" alt="" width={96} height={96} draggable={false} priority />
+      </span>
+      <span className="theme-toggle-label">{isDark ? "Light" : "Dark"}</span>
     </button>
   );
 }

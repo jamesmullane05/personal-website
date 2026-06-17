@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import { ThemeProvider } from "./context/themeContext";
 import ScrollAnimations from "./components/ScrollAnimations";
 import AnimationProvider from "./components/AnimationProvider";
+import CustomCursor from "./components/CustomCursor";
 import "lenis/dist/lenis.css";
 
 export const metadata: Metadata = {
@@ -58,6 +59,7 @@ export default function RootLayout({
         <ThemeProvider>
           <AnimationProvider>
             <ScrollAnimations />
+            <CustomCursor />
             <NavigationBar />
             {children}
             <Footer />
