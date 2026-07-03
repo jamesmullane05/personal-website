@@ -1,4 +1,5 @@
 import { IconType } from "react-icons";
+import { withBasePath } from "@/site.config";
 import {
   SiSharp,
   SiDotnet,
@@ -23,7 +24,7 @@ export const profile = {
   github: "https://github.com/Jamesmullane05",
   linkedin: "https://www.linkedin.com/in/james-mullane-95a526252/",
   leetcode: "https://leetcode.com/jamesmullane05",
-  resume: "/cv.pdf",
+  resume: withBasePath("/cv.pdf"),
   navbarSubtitle: "CS & Economics - Auckland",
   headline: "Penultimate Computer Science student.",
   summary:
@@ -188,7 +189,7 @@ export const experience: ExperienceItem[] = [
     role: "Web Developer",
     company: "Nuttall Henderson Jewellers",
     date: "Feb 2021 - Dec 2022",
-    logo: "/logos/nuttall-henderson.svg",
+    logo: withBasePath("/logos/nuttall-henderson.svg"),
     logoAlt: "Nuttall Henderson Jewellers logo",
     website: "https://nuttallhendersonjewellers.co.nz",
     description:
@@ -202,7 +203,7 @@ export const experience: ExperienceItem[] = [
     role: "Crew Member",
     company: "McDonald's",
     date: "Feb 2022 - Feb 2023",
-    logo: "/logos/mcdonalds.jpg",
+    logo: withBasePath("/logos/mcdonalds.jpg"),
     logoAlt: "McDonald's NZ golden arches logo",
     website: "https://www.mcdonalds.com/nz/en-nz.html",
     description:

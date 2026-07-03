@@ -1,5 +1,6 @@
 import { profile } from "@/src/data/site";
 import { FaArrowRight } from "react-icons/fa6";
+import AnimatedLink from "./AnimatedLink";
 
 export default function Hero() {
   return (
@@ -39,14 +40,14 @@ export default function Hero() {
           </div>
         </div>
 
-        <a
+        <AnimatedLink
           href="/projects"
           className="group mb-10 inline-flex w-fit items-center gap-3 text-sm font-medium text-slate-500 transition hover:text-slate-950"
         >
           <span className="h-px w-10 bg-slate-300 transition-all duration-300 group-hover:w-14 group-hover:bg-slate-950" />
           View projects
           <FaArrowRight className="text-xs transition duration-300 group-hover:translate-x-1" />
-        </a>
+        </AnimatedLink>
       </div>
     </section>
   );

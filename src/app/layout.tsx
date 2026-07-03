@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import { ThemeProvider } from "./context/themeContext";
 import ScrollAnimations from "./components/ScrollAnimations";
 import AnimationProvider from "./components/AnimationProvider";
+import { SITE_URL } from "@/site.config";
 import "lenis/dist/lenis.css";
 
 const themeInitScript = `
@@ -21,7 +22,7 @@ const themeInitScript = `
 `;
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://jamesmullane05.github.io"),
+  metadataBase: new URL(`${SITE_URL}/`),
   title: {
     default: "James Mullane | Software Engineering Portfolio",
     template: "%s | James Mullane",
@@ -43,7 +44,7 @@ export const metadata: Metadata = {
     title: "James Mullane | Software Engineering Portfolio",
     description:
       "Computer Science and Economics student at the University of Auckland building full-stack applications, automation tools, APIs, and e-commerce systems.",
-    url: "https://jamesmullane05.github.io",
+    url: SITE_URL,
     siteName: "James Mullane Portfolio",
     locale: "en_NZ",
     type: "website",
