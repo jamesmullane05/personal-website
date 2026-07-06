@@ -21,6 +21,7 @@
 
 * {
   box-sizing: border-box;
+  user-select: none;
 }
 
 html {
@@ -51,16 +52,6 @@ html.lenis.lenis-stopped {
 
 a {
   text-decoration: none;
-}
-
-::selection {
-  background: #0f172a;
-  color: #ffffff;
-}
-
-.dark ::selection {
-  background: #e2e8f0;
-  color: #020617;
 }
 
 /* Theme overrides for existing Tailwind utility classes. Keeping them here makes the

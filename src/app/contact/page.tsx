@@ -1,5 +1,6 @@
 import {
   FaArrowUpRightFromSquare,
+  FaFileArrowDown,
   FaEnvelope,
   FaGithub,
   FaLinkedin,
@@ -20,7 +21,7 @@ export default function ContactPage() {
           Let&apos;s talk.
         </h1>
         <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-500 sm:text-xl">
-          I&apos;m based in Auckland and happy to chat about software, projects, internships, or practical tools worth building.
+          I&apos;m based in Auckland and happy to chat about software, internships, and operational problems worth solving.
         </p>
       </section>
 
@@ -58,6 +59,18 @@ export default function ContactPage() {
           </p>
 
           <div className="mt-8 border-b border-slate-200">
+            <a
+              href={profile.resume}
+              download="James_Mullane_CV.pdf"
+              className="group flex items-center gap-4 border-t border-slate-200 py-5"
+            >
+              <FaFileArrowDown className="text-xl text-slate-400 transition group-hover:text-slate-950" />
+              <div>
+                <h3 className="font-medium text-slate-950">Curriculum vitae</h3>
+                <p className="mt-1 text-sm text-slate-500">Download my experience and education summary</p>
+              </div>
+              <FaArrowUpRightFromSquare className="ml-auto text-xs text-slate-400 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-slate-950" />
+            </a>
             <a
               href={profile.linkedin}
               target="_blank"

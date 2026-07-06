@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     template: "%s | James Mullane",
   },
   description:
-    "James Mullane is a Computer Science and Economics student at the University of Auckland building full-stack applications, automation tools, APIs, and e-commerce systems.",
+    "James Mullane is a Computer Science and Economics student at the University of Auckland creating full-stack applications, APIs, automation, and e-commerce systems.",
   keywords: [
     "James Mullane",
     "University of Auckland",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "James Mullane | Software Engineering Portfolio",
     description:
-      "Computer Science and Economics student at the University of Auckland building full-stack applications, automation tools, APIs, and e-commerce systems.",
+      "Computer Science and Economics student at the University of Auckland creating full-stack applications, APIs, automation, and e-commerce systems.",
     url: SITE_URL,
     siteName: "James Mullane Portfolio",
     locale: "en_NZ",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "James Mullane | Software Engineering Portfolio",
     description:
-      "Computer Science and Economics student at the University of Auckland building practical software products.",
+      "Computer Science and Economics student at the University of Auckland creating practical software products.",
   },
   robots: {
     index: true,

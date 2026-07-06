@@ -28,7 +28,7 @@ export const profile = {
   navbarSubtitle: "CS & Economics - Auckland",
   headline: "Penultimate Computer Science student.",
   summary:
-    "I'm a University of Auckland Computer Science and Economics student interested in practical software, automation, and web experiences.",
+    "I'm a University of Auckland Computer Science and Economics student interested in useful software, operational automation, and web experiences.",
 };
 
 export type Project = {
@@ -38,6 +38,8 @@ export type Project = {
   impact: string;
   tags: string[];
   link?: string;
+  image?: string;
+  imageAlt?: string;
 };
 
 export const projects: Project[] = [
@@ -45,36 +47,42 @@ export const projects: Project[] = [
     title: "Human Nutrition Unit Website",
     eyebrow: "Capstone Project - Team Lead / Backend / DevOps",
     description:
-      "Led a team of six developers building a user-facing website for a University of Auckland research institute.",
+      "Led a six-person development team delivering a public website for a University of Auckland research institute.",
     impact:
       "Set up CI/CD workflows, database migrations, independent developer databases, backend architecture, and API integrations for the frontend.",
     tags: ["Next.js", "TypeScript", "APIs", "CI/CD", "Databases"],
     link: "https://www.capitalise.space/projects/6a44d62d040af2a0b4341c4f",
+    image: withBasePath("/projects/human-nutrition-home.webp"),
+    imageAlt:
+      "Homepage of the Human Nutrition Unit website showing the Auckland research facility.",
   },
   {
     title: "Shopify Label Printing Desktop App",
     eyebrow: "Automation - E-commerce Operations",
     description:
-      "Built a desktop tool that connects Shopify order data to Brother B-PAC label-printing software.",
+      "Engineered a desktop application that connects Shopify order data to Brother B-PAC label-printing software.",
     impact:
       "Turned a manual label-editing workflow into one-click printing while keeping fields editable for custom order requests.",
     tags: ["Shopify API", "C#", ".NET", "Automation", "Windows"],
   },
   {
-    title: "CSV to Shopify Schema Tool",
+    title: "CSV to Shopify Schema",
     eyebrow: "Data Processing - Product Imports",
     description:
-      "Created a schema-processing tool for transforming supplier CSV files into Shopify-ready product data.",
+      "Created a schema-driven processor that transforms supplier CSV files into Shopify-ready product data.",
     impact:
       "Supported column renaming, margin calculations, data transformations, and AI-assisted product-title generation.",
     tags: ["Python", "CSV", "Shopify", "Data", "Automation"],
     link: "https://github.com/jamesmullane05/CSV-to-Shopify-Schema-Language",
+    image: withBasePath("/projects/csv-schema-visual.webp"),
+    imageAlt:
+      "Supplier spreadsheet data flowing through a schema transformation engine into organized e-commerce product records.",
   },
   {
     title: "Facebook Marketplace Automation",
-    eyebrow: "Browser Automation - Internal Tooling",
+    eyebrow: "Browser Automation - Internal Systems",
     description:
-      "Built automation software that reads product information from Excel and creates Facebook Marketplace listings.",
+      "Developed software that reads product information from Excel and creates Facebook Marketplace listings automatically.",
     impact:
       "Reduced repetitive manual listing work and improved listing consistency across e-commerce sales channels.",
     tags: ["Python", "Excel", "Automation", "E-commerce"],
@@ -83,17 +91,33 @@ export const projects: Project[] = [
     title: "Cosmoshop E-commerce Platform",
     eyebrow: "Co-founder - Full-stack / Operations",
     description:
-      "Built and operate Cosmoshop's online storefront and supporting systems across website, Trade Me, Chrono24, and Facebook Marketplace.",
+      "Operate Cosmoshop's online storefront and connected systems across its website, Trade Me, Chrono24, and Facebook Marketplace.",
     impact:
       "Combined software, supplier relationships, customer support, stock management, and Meta marketing campaigns into a working commercial operation.",
     tags: ["Shopify", "Product", "Operations", "Meta Ads"],
     link: "https://www.cosmoshop.co.nz",
+    image: withBasePath("/projects/cosmoshop-home.webp"),
+    imageAlt:
+      "Cosmoshop homepage showing its navigation and a Citizen watch campaign.",
+  },
+  {
+    title: "Nuttall Henderson Jewellers Website",
+    eyebrow: "Web Development - Shopify Migration",
+    description:
+      "Designed, migrated, and maintained a Shopify website for an Auckland jewellery business.",
+    impact:
+      "Moved the product catalogue from WordPress, resolved website issues, and supported a smoother online shopping experience.",
+    tags: ["Shopify", "E-commerce", "Migration", "Support"],
+    link: "https://nuttallhendersonjewellers.co.nz",
+    image: withBasePath("/projects/nuttall-henderson-home.webp"),
+    imageAlt:
+      "Nuttall Henderson Jewellers homepage showing jewellery services and store navigation.",
   },
   {
     title: "Linux User Group Website",
     eyebrow: "WDCC - Frontend / RSS",
     description:
-      "Contributing to a team of eleven building a website for the University of Auckland Linux User Group.",
+      "Contribute within an eleven-person team delivering a website for the University of Auckland Linux User Group.",
     impact:
       "Implemented an RSS feed for club news and updates while contributing to frontend development and team Git workflows.",
     tags: ["React", "RSS", "Frontend", "Git"],
@@ -115,8 +139,12 @@ export const skillGroups: SkillGroup[] = [
     skills: ["React", "Next.js", "Node.js", "Flask", ".NET", "Pandas", "Tailwind CSS", "Jest"],
   },
   {
-    title: "Tools & Platforms",
+    title: "Platforms & Workflow",
     skills: ["Git", "GitHub", "Prisma", "REST APIs", "GraphQL", "Shopify API", "CI/CD", "Excel"],
+  },
+  {
+    title: "Focus Areas",
+    skills: ["Automation", "Backend Systems", "Data Processing", "E-commerce", "Developer Experience"],
   },
 ];
 
@@ -178,11 +206,11 @@ export const experience: ExperienceItem[] = [
     logoAlt: "Cosmoshop logo",
     website: "https://www.cosmoshop.co.nz",
     description:
-      "Co-founded and operate an e-commerce watch business while building tools that improve product listing, order processing, and fulfilment workflows.",
+      "Co-founded and operate an e-commerce watch business, improving product listing, order processing, and fulfilment through custom automation and integrations.",
     bullets: [
-      "Built and launched the online store and manage four sales channels: website, Trade Me, Chrono24, and Facebook Marketplace.",
+      "Launched the online store and manage four sales channels: website, Trade Me, Chrono24, and Facebook Marketplace.",
       "Negotiated with UK and EU brand distributors and supported client meetings, stock takes, customer support, and marketing campaigns.",
-      "Created automation and integration tools around Shopify, product imports, marketplace listings, and label printing.",
+      "Automated Shopify product imports, marketplace listings, and order-label printing.",
     ],
   },
   {

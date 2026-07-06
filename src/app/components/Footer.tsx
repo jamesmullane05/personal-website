@@ -1,4 +1,5 @@
 import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
+import { SiLeetcode } from "react-icons/si";
 import { profile } from "@/src/data/site";
 
 export default function Footer() {
@@ -26,6 +27,14 @@ export default function Footer() {
             className="inline-flex items-center gap-2 font-medium text-slate-600 transition hover:text-slate-950"
           >
             <FaLinkedin /> LinkedIn
+          </a>
+          <a
+            href={profile.leetcode}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 font-medium text-slate-600 transition hover:text-slate-950"
+          >
+            <SiLeetcode /> LeetCode
           </a>
           <a
             href={`mailto:${profile.email}`}

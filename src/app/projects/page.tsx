@@ -12,7 +12,7 @@ export default function ProjectsPage() {
           Projects
         </h1>
         <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-500 sm:text-xl">
-          A collection of software, automation, and web work shaped around real problems and practical outcomes.
+          Selected software and web work shaped around real operational problems and measurable outcomes.
         </p>
       </section>
 

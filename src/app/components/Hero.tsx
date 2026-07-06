@@ -1,53 +1,55 @@
-import { profile } from "@/src/data/site";
 import { FaArrowRight } from "react-icons/fa6";
 import AnimatedLink from "./AnimatedLink";
 
 export default function Hero() {
   return (
-    <section className="px-5 sm:px-6">
-      <div className="mx-auto flex min-h-svh max-w-6xl flex-col pt-24">
-        <div className="flex flex-1 items-center">
-          <div data-reveal className="max-w-5xl pb-8">
-            <p className="mb-7 text-base font-normal text-slate-500">
-              Penultimate Computer Science student
-            </p>
-
-            <h1 className="text-6xl font-normal leading-none text-slate-950 sm:text-8xl lg:text-9xl">
+    <section>
+      <div className="mx-auto flex min-h-svh max-w-6xl flex-col px-5 pt-24 sm:px-6">
+        <div className="flex flex-1 items-center py-16">
+          <div data-reveal className="w-full">
+            <h1 className="text-6xl font-normal leading-none text-slate-950 sm:text-8xl">
               James Mullane
             </h1>
 
-            <p className="mt-9 max-w-2xl text-xl leading-8 text-slate-500 sm:text-2xl sm:leading-9">
-              I build practical software, automation tools, and web experiences.
+            <p className="mt-8 max-w-3xl text-lg leading-8 text-slate-500 sm:text-xl">
+              Penultimate-year Computer Science and Economics student seeking a software engineering internship.
             </p>
 
-            <div className="mt-11 flex flex-wrap gap-x-8 gap-y-3 text-sm font-medium text-slate-950">
-              <a href={profile.github} target="_blank" rel="noopener noreferrer" className="transition hover:text-slate-500">
-                GitHub
-              </a>
-              <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="transition hover:text-slate-500">
-                LinkedIn
-              </a>
-              <a href={profile.leetcode} target="_blank" rel="noopener noreferrer" className="transition hover:text-slate-500">
-                LeetCode
-              </a>
-              <a href={`mailto:${profile.email}`} className="transition hover:text-slate-500">
-                Email
-              </a>
-              <a href={profile.resume} download="James_Mullane_Resume.pdf" className="transition hover:text-slate-500">
-                CV
-              </a>
+            <div className="mt-12 grid border-y border-slate-200 sm:grid-cols-[1fr_1fr_auto]">
+              <div className="py-5 sm:pr-8">
+                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">
+                  Based in
+                </p>
+                <p className="mt-2 text-sm font-medium text-slate-800">
+                  Auckland, New Zealand
+                </p>
+              </div>
+              <div className="border-t border-slate-200 py-5 sm:border-l sm:border-t-0 sm:px-8">
+                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">
+                  Studying
+                </p>
+                <p className="mt-2 text-sm font-medium text-slate-800">
+                  University of Auckland · Graduating 2026
+                </p>
+              </div>
+              <div className="flex items-center gap-3 border-t border-slate-200 py-5 sm:border-l sm:border-t-0 sm:pl-8">
+                <AnimatedLink
+                  href="/projects"
+                  className="group inline-flex items-center gap-2 rounded-lg bg-slate-950 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-slate-800 dark:bg-slate-800 dark:hover:bg-slate-700"
+                >
+                  View projects
+                  <FaArrowRight className="text-xs transition duration-300 group-hover:translate-x-1" />
+                </AnimatedLink>
+                <AnimatedLink
+                  href="/contact"
+                  className="inline-flex items-center rounded-lg border border-slate-300 px-4 py-2.5 text-sm font-semibold text-slate-700 transition hover:-translate-y-0.5 hover:border-slate-400 hover:bg-slate-100"
+                >
+                  Contact
+                </AnimatedLink>
+              </div>
             </div>
           </div>
         </div>
-
-        <AnimatedLink
-          href="/projects"
-          className="group mb-10 inline-flex w-fit items-center gap-3 text-sm font-medium text-slate-500 transition hover:text-slate-950"
-        >
-          <span className="h-px w-10 bg-slate-300 transition-all duration-300 group-hover:w-14 group-hover:bg-slate-950" />
-          View projects
-          <FaArrowRight className="text-xs transition duration-300 group-hover:translate-x-1" />
-        </AnimatedLink>
       </div>
     </section>
   );
